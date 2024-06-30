@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast Maps</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+    <header>
+        <div id="header" class="container">
+            <h1>SkyCast Maps</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="map" class="map-container">
+            <p>Loading map...</p>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer" class="container">
+            <p>&copy; 2024 SkyCast Weather</p>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="components.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHeader();
+            loadFooter();
+        });
+
+        function initMap() {
+            var potsdam = { lat: 52.5200, lng: 13.4050 }; // Example coordinates for Potsdam, Germany
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: potsdam
+            });
+
+            var marker = new google.maps.Marker({
+                position: potsdam,
+                map: map,
+                title: 'Potsdam'
+            });
+        }
+
+        function loadHeader() {
+            const header = document.getElementById('header');
+            header.innerHTML = '<h1>SkyCast Maps</h1>';
+        }
+
+        function loadFooter() {
+            const footer = document.getElementById('footer');
+            footer.innerHTML = '<p>&copy; 2024 SkyCast Weather</p>';
+        }
+    </script>
+</body>
+</html>

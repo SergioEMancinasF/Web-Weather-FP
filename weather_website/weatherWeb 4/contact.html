@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SkyCast</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="icon" href="./assets/images/logo.ico" type="image/x-icon">
+    <script src="components.js" defer></script>
+</head>
+<body>
+    <header>
+        <div id="header" class="container">
+            <div class="logo-title-container">
+                <img src="./assets/images/logo.png" alt="SkyCast Logo" class="logo">
+                <h1>SkyCast Weather</h1>
+            </div>
+            <nav>
+                <ul class="nav-links ">
+                    <li><a href="homePage.php" class="active">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container contact-form">
+            <h2>Contact Form</h2>
+            <form action="contact.php" method="post">
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footerWrapper">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2024 SkyCast Weather. All rights reserved.</p>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="homePage.php">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
